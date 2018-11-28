@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Editando</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+
+    <ion-item>
+        <ion-label floating >Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="note.title" value="{{ titulo }}"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+        <ion-label floating >Descrição</ion-label>
+        <ion-textarea type="text" [(ngModel)]="note.description" value="{{ descricao }}"></ion-textarea>
+    </ion-item>
+    
+    <button ion-button full (click)="alterar(note.title, note.description)">Alterar</button>
+  </ion-list>
+
+  <button ion-button full (click)="voltar()">
+    <ion-icon name="arrow-back"></ion-icon>
+      &nbsp;Voltar
+  </button>
+</ion-content>
